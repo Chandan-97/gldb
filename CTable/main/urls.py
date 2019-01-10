@@ -5,5 +5,6 @@ from . import views as mainviews
 
 urlpatterns = [
     path('home/', mainviews.home),
-    path('search/', mainviews.search)
+    path('search/', mainviews.search),
+    path('', mainviews.redirectHome)
 ]
