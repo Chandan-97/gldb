@@ -1,0 +1,1 @@
+web: gunicorn CTable.wsgi --log-file -
