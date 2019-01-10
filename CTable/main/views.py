@@ -27,6 +27,27 @@ def search(request):
 
     return render(request, "main/userlist.html", query_val)
 
+# show full detail of the user and the model
+def getUserDetails(request, uid):
+
+    userDetails = {}
+
+    # From Profile Table
+    userDetails["name"] = Profile.objects.get(pk=uid).get("name")
+    userDetails["email"] = Profile.objects.get(pk=uid).get("email")
+    userDetails["phoneno"] = Profile.objects.get(pk=uid).get("phoneno")
+
+    # From ProfileExtension Table
+    userDetails["sms"] = ProfileExtension.objects.filter(user=uid).values()[0].get("sms")
+    userDetails["email"] = ProfileExtension.objects.filter(user=uid).values()[0].get("email")
+
+    # From Product Table
+    # userDetails["products"] = Product.objects.filter()
+    # To be continued
+
+
+    return render(request, "main/userdetails.html")
+
 def redirectHome(request):
     response = redirect('/user/home/')
     return response
