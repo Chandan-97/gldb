@@ -1,0 +1,22 @@
+.navbar-brand{
+    font-family: 'Monoton', cursive;
+    font-size: 35px;
+}
+
+.product-age{
+    background: #3366ff;
+    color: white;
+    font-weight: 400;
+    border-radius: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.checkbox{
+    zoom: 1.5;
+}
+
+.form-check-label{
+    font-size: large;
+    margin-left: 8px;
+}

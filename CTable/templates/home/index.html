@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+      <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'home/css/index.css' %}">
+    <title>CTable : Get at One Place</title>
+  </head>
+  <body>
+  <div class="container-fluid">
+      <nav class="navbar navbar-light">
+          <a class="navbar-brand" href="#">CTable</a>
+      </nav>
+      <hr>
+      <form action="" method="post">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-md-6">
+                  <h3 class="text-center product-age">Product Age</h3>
+                  <select class="custom-select mr-sm-2">
+                      <option selected value="any"> ANY </option>
+                      <option value="le1"> <= 1 Years </option>
+                      <option value="ge3"> >= 3 Years </option>
+                      <option value="l3">   < 3 Years </option>
+                  </select>
+              </div>
+              <div class="col-md-6">
+                  <h3 class="text-center product-age">Product</h3>
+                  <div class="form-check px-0">
+                      <ul class="list-group">
+                          <li class="list-group-item px-4">
+                              <div class="mx-4">
+                                <input class="form-check-input checkbox" type="checkbox" value="item1" id="item1">
+                                <label class="form-check-label" for="item1">Item 1</label>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item px-4">
+                              <div class="mx-4">
+                                  <input class="form-check-input checkbox" type="checkbox" value="item2" id="item2">
+                                  <label class="form-check-label" for="item2">Item 2</label>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item px-4">
+                              <div class="mx-4">
+                                  <input class="form-check-input checkbox" type="checkbox" value="item3" id="item3">
+                                  <label class="form-check-label" for="item3">Item 3</label>
+                              </div>
+                          </li>
+
+                          <li class="list-group-item px-4">
+                              <div class="mx-4">
+                                  <input class="form-check-input checkbox" type="checkbox" value="item4" id="item4">
+                                  <label class="form-check-label" for="item4">Item 4</label>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+          <input type="submit" class="btn btn-primary btn-block mt-4"/>
+      </form>
+  </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="{% static 'home/js/index.js' %}"></script>
+  </body>
+</html>
