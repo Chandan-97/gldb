@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>CRM @LGEIL</title>
+
+    <style>
+        .main{
+            margin: 0 auto;
+            width: 40%;
+            margin-top: 20px;
+        }
+
+        .main-text{
+            text-align: center;
+        }
+
+        input{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        label{
+            margin-top: 10px;
+            display: block;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        input[type=date]{
+            margin-top: 0;
+        }
+
+        input[type=submit], input[type=submit]:hover{
+            background: #a8a8a4;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">LG India</a>
+        <div class="ml-auto">CRM @LGEIL</div>
+    </nav>
+
+    <div class="main">
+        <form action="/campaign/" method="POST">
+            {% csrf_token %}
+            <h3 class="main-text">Campaign Info</h3>
+            <input type="text" class="form-control" placeholder="Campaign Name" name="campaign_name">
+            <input type="text" class="form-control" placeholder="Requester Name" name="requester_name">
+            <label for="request_date">Request Date</label>
+            <input type="date" class="form-control" id="request_date" name="request_date">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="camp_start_date">Campaign Start Date</label>
+                    <input type="date" class="form-control" id="camp_start_date" name="campaign_start_date">
+                </div>
+                <div class="col-md-6">
+                    <label for="camp_end_date">Campaign End Date</label>
+                    <input type="date" class="form-control" id="camp_end_date" name="campaign_end_date">
+                </div>
+            </div>
+            <input type="email" class="form-control" placeholder="Email@lge.com" name="campaign_email">
+            <input type="submit" class="btn btn-block mt-4"/>
+        </form>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>

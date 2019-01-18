@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'main'
+    'main',
+    'home',
+    'dblogic'
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'CTable.urls'
@@ -82,10 +85,21 @@ WSGI_APPLICATION = 'CTable.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'gl',
+        'USER':'root',
+        'PASSWORD':'helloworld',
+        'HOST':'localhost',
+        'PORT':3306,
     }
 }
 
@@ -131,3 +145,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# managing login url routing
+# LOGIN_URL = "home/creden"
+LOGOUT_REQUIRED_URL = "/"
+LOGIN_REDIRECT_URL = '/your-path'
+
+# Date formatverse url fin
+DATE_INPUT_FORMATS = ['%d-%m-%Y']

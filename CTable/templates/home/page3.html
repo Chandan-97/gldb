@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>CRM @LGEIL</title>
+
+    <style>
+        .main{
+            margin: 0 auto;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .main-text{
+            text-align: center;
+        }
+
+        input{
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .checkbox{
+
+        }
+
+        .form-check-label{
+            font-size: large;
+            margin-left: 8px;
+        }
+
+        .criteria-selection{
+            background: #a8a8a4;
+            color: white;
+            padding: 4px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+        }
+
+        input[type=checkbox]{
+            height: 100%;
+            margin-top: 0px;
+            top: 0px;
+            zoom: 1.5;
+        }
+        
+        .item-label{
+            display: block;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: auto;
+        }
+
+        .dropdown-menu{
+            width: 100%;
+        }
+
+        .dropdown select{
+            width: 100%;
+        }
+
+        .dropdown-toggle{
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .and-or {
+            width: 40%;
+            margin: 0 auto;
+        }
+
+        .from, .to{
+            text-align: center;
+        }
+
+        .select_equality, .select_years{
+            width: 100%;
+        }
+
+        input[type=submit], input[type=submit]:hover{
+            background: #a8a8a4;
+            color: white;
+            font-weight: 600;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">LG India</a>
+        <div class="ml-auto">CRM @LGEIL</div>
+    </nav>
+
+    <div class="main">
+        <form action="/criteria/" method="POST">
+            {% csrf_token %}
+
+            <h3 class="main-text">Criteria</h3>
+            <hr>
+            <!--product-1 start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="product1"
+                                name="product1">
+                        <span class="item-label">Product 1</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="dropdown">
+                        <select class="data-toggle" name="product1_option">
+                            <option value="TV">TV</option>
+                            <option value="REF">REF</option>
+                            <option value="AC">AC</option>
+                            <option value="WM">WM</option>
+                            <option value="AV">AV</option>
+                            <option value="MWO">MWO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="product1_and_or">
+                            <option value="or">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--product-1 ends-->
+
+
+            <!--product-2 start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="product2"
+                                name="product2">
+                        <span class="item-label">Product 2</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="dropdown">
+                        <select class="data-toggle" name="product2_option">
+                            <option value="TV">TV</option>
+                            <option value="REF">REF</option>
+                            <option value="AC">AC</option>
+                            <option value="WM">WM</option>
+                            <option value="AV">AV</option>
+                            <option value="MWO">MWO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="product2_and_or">
+                            <option value="or">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--product-2 ends-->
+
+
+            <!--product-3 start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="product3"
+                                name="product3">
+                        <span class="item-label">Product 3</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="dropdown">
+                        <select class="data-toggle" name="product3_option">
+                            <option value="TV">TV</option>
+                            <option value="REF">REF</option>
+                            <option value="AC">AC</option>
+                            <option value="WM">WM</option>
+                            <option value="AV">AV</option>
+                            <option value="MWO">MWO</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="product3_and_or">
+                            <option value="or">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--product-3 ends-->
+
+
+            <!--tenure start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="tenure"
+                                name="tenure">
+                        <span class="item-label">Tenure </span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="from">FROM</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="tenure_from_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="tenure_from">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="to">TO</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="tenure_to_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="tenure_to">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="tenure_and_or">
+                            <option value="or" name="">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--tenure ends-->
+
+
+            <!--Warranty start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="warranty"
+                                name="warranty">
+                        <span class="item-label">Warranty</span>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <select class="select_years" name="warranty_status" >
+                        <option value="IW">IW</option>
+                        <option value="OW">OW</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle"name="warranty_status_and_or">
+                            <option value="or" >OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--Warranty ends-->
+
+
+            <!--Recency start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="recency"
+                                name="recency">
+                        <span class="item-label">Recency</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="from">FROM</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="recency_from_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="recency_from">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="to">TO</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="recency_to_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select name="tenure_to" class="select_years" name="recency_to">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="recency_and_or">
+                            <option value="or" name="">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--Recency ends-->
+
+
+            <!--Frequency start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" name="frequency">
+                        <span class="item-label">Frequency</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="from">FROM</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select name="tenure_from_equality" name="frequency_from_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="frequency_from">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="to">TO</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="frequency_to_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="frequency_to">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="frequency_and_or">
+                            <option value="or" name="">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--Frequency ends-->
+
+
+            <!--Monetary-Value start-->
+            <div class="row">
+                <div class="col-md-4 criteria-selection">
+                    <div class="mx-4">
+                        <input  class="form-check-input checkbox" type="checkbox" value="true" id="monetary"
+                                name="monetary">
+                        <span class="item-label">Monetary Value</span>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="from">FROM</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="monetary_from_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="monetary_from">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="to">TO</div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="select_equality" name="monetary_to_equality">
+                                        <option value="l"> < </option>
+                                        <option value="e"> = </option>
+                                        <option value="g"> > </option>
+                                        <option value="le"><=</option>
+                                        <option value="ge">>=</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="select_years" name="monetary_to">
+                                        <option value="1"> 1 </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="and-or">
+                        <select class="data-toggle" name="monetary_and_or">
+                            <option value="or" name="">OR</option>
+                            <option value="and">AND</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <br><br><br><br><br><br><br>
+            <hr>
+            <!--Monetary-Value ends-->
+            <br><br>
+            <input type="submit" value="SUBMIT" class="btn btn-block">
+            <br><br>
+        </form>
+    </div>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</body>
+</html>
