@@ -8,4 +8,5 @@ urlpatterns = [
     path('criteria/', views.criteria),
     path('logout', views.Logout),
     path('selection/', views.selection),
+    path('confirm', views.confirm),
 ]

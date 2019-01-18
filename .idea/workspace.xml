@@ -1,59 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="877b3639-00b6-4d3c-8129-b2e402ffd76a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CTable/home/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CTable/home/sqlGenerator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CTable/templates/home/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CTable/templates/home/page5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/CTable/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/CTable/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/CTable/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/CTable/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/CTable/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/CTable/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/CTable/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/CTable/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/migrations/0002_auto_20190109_0608.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/migrations/0002_auto_20190109_0608.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/main/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/mydatabase" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/mydatabase" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/main/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/main/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/main/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/main/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/static/res/bootstrap/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/templates/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/templates/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/templates/main/userdetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/templates/main/userdetails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CTable/templates/main/userlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/CTable/templates/main/userlist.html" afterDir="false" />
-    </list>
+    <list default="true" id="877b3639-00b6-4d3c-8129-b2e402ffd76a" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CTable/home/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
+            <state relative-caret-position="120">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#59#0" expanded="true" />
               </folding>
@@ -142,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CTable/templates/home/page5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+            <state relative-caret-position="492">
+              <caret line="115" column="18" lean-forward="true" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -167,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/CTable/home/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
-              <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -219,12 +167,12 @@
         <option value="$PROJECT_DIR$/CTable/home/forms.py" />
         <option value="$PROJECT_DIR$/CTable/home/models.py" />
         <option value="$PROJECT_DIR$/CTable/templates/home/page4.html" />
-        <option value="$PROJECT_DIR$/CTable/home/urls.py" />
         <option value="$PROJECT_DIR$/CTable/home/sqlGenerator.py" />
         <option value="$PROJECT_DIR$/CTable/CTable/settings.py" />
         <option value="$PROJECT_DIR$/CTable/templates/home/page3.html" />
-        <option value="$PROJECT_DIR$/CTable/home/views.py" />
         <option value="$PROJECT_DIR$/CTable/templates/home/page5.html" />
+        <option value="$PROJECT_DIR$/CTable/home/urls.py" />
+        <option value="$PROJECT_DIR$/CTable/home/views.py" />
       </list>
     </option>
   </component>
@@ -361,12 +309,12 @@
       <workItem from="1547551398517" duration="1679000" />
       <workItem from="1547712627079" duration="9807000" />
       <workItem from="1547744096175" duration="870000" />
-      <workItem from="1547781541750" duration="16457000" />
+      <workItem from="1547781541750" duration="16997000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59272000" />
+    <option name="totallyTimeSpent" value="59812000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-22" width="1368" height="795" extended-state="0" />
@@ -422,6 +370,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Some Flavour of Working Code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some Flavour of Working Code" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CTable/main/tests.py">
@@ -624,16 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CTable/home/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CTable/CTable/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -655,16 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CTable/home/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="78" column="55" selection-start-line="78" selection-start-column="55" selection-end-line="78" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CTable/home/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -682,12 +614,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CTable/home/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CTable/templates/home/page5.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="100" column="24" lean-forward="true" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
+        <state relative-caret-position="492">
+          <caret line="115" column="18" lean-forward="true" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#textarea#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CTable/home/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>

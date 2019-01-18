@@ -7,6 +7,7 @@ from .models import Campaign
 
 from .sqlGenerator import getSql, getSelect
 
+
 # Create your views here.
 
 
@@ -79,6 +80,22 @@ def selection(request):
         return render(request, "home/page5.html", {"sql": sql})
     else:
         return render(request, "home/page4.html")
+
+def confirm(request):
+    if request.method == "POST":
+        query = request.POST.dict()
+        try:
+            query = query["query"]
+        except Exception as e:
+            print("[confirm] : " + str(query))
+            query = "SELECT * FROM rw_service_mst"
+
+
+
+
+        return HttpResponse("Query Executed")
+    else:
+        return render(request, "home/page5.html")
 
 
 
