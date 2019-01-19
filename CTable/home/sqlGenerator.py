@@ -18,7 +18,7 @@ def getSql(v):
     try:
         if(v["product3"] == "true"):
             where = where + service + ".model_code=" + v["product3_option"]
-            where = where + " " + v["product3_and_or"]
+            where = where + " " + v["product3_and_or"] + " "
     except Exception as e:
         pass
 

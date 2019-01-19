@@ -7,6 +7,8 @@ from .models import Campaign
 
 from .sqlGenerator import getSql, getSelect
 
+# custom sql queries
+from django.db import connection
 
 # Create your views here.
 
@@ -90,9 +92,20 @@ def confirm(request):
             print("[confirm] : " + str(query))
             query = "SELECT * FROM rw_service_mst"
 
+        print("[confirm] : " + str(query))
 
+        # for testing only
+        # Start
+        query = "SELECt * FROM rw_service_mst"
+        # End
 
+        print("===========================================")
+        print("===========================================")
 
+        with connection.cursor() as cursor:
+            cursor.execute(query)
+            result = cursor.fetchall()
+            print(result)
         return HttpResponse("Query Executed")
     else:
         return render(request, "home/page5.html")
