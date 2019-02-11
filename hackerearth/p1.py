@@ -1,3 +1,6 @@
+# Because You look Gorgeous in Black
+# I don't know why I can't say this when we are alone
+
 # Ref : https://www.geeksforgeeks.org/connected-components-in-an-undirected-graph/
 # Python program to print connected
 # components in an undirected graph
