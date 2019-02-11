@@ -21,3 +21,13 @@ class Campaign(models.Model):
 
     class Meta:
         verbose_name_plural = "Campaign"
+
+class Product(models.Model):
+    product_name = models.CharField(max_length=20, default="N/A")
+
+    def __str__(self):
+        return self.product_name
+
+    class Meta:
+        verbose_name_plural = "Product"
+

@@ -12,9 +12,6 @@ from django.db import connection
 
 # Create your views here.
 
-
-
-
 def home(request):
     if request.method == "POST":
         login_data = request.POST.dict()
@@ -27,10 +24,12 @@ def home(request):
         else:
             return redirect("/")
     else:
+        if request.user.is_authenticated:
+            return redirect("/campaign")
         return render(request, "home/page1.html")
 
 
-@login_required
+@login_required(login_url='/')
 def campaign(request):
     if request.method == "POST":
         campaign = CampaignForm(request.POST)
@@ -41,12 +40,12 @@ def campaign(request):
         else:
             print(campaign.errors)
             return HttpResponse(campaign.errors)
-            return redirect("/campaign")
+            # return redirect("/campaign")
     else:
         print("[DEB] : " + str("Campaign Get Hit......."))
         return render(request, "home/page2.html")
 
-@login_required
+@login_required(login_url='/')
 def criteria(request):
     if request.method == "POST":
         print(request.POST.dict())
@@ -57,13 +56,13 @@ def criteria(request):
     else:
         return render(request, "home/page3.html")
 
-@login_required
+@login_required(login_url='/')
 def Logout(request):
     logout(request)
     print("[DEB] : " + str("Logout Success"))
     return redirect("/")
 
-@login_required
+@login_required(login_url='/')
 def selection(request):
     if request.method == "POST":
         form_data = request.POST.dict()
@@ -83,6 +82,7 @@ def selection(request):
     else:
         return render(request, "home/page4.html")
 
+@login_required(login_url='/')
 def confirm(request):
     if request.method == "POST":
         query = request.POST.dict()
