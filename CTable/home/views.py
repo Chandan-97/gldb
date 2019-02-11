@@ -16,7 +16,7 @@ def home(request):
     if request.method == "POST":
         login_data = request.POST.dict()
         print(login_data)
-        user = authenticate(username=login_data["email"], password=login_data["pass"])
+        user = authenticate(username=login_data["username"], password=login_data["password"])
 
         if user is not None:
             login(request, user)
@@ -26,7 +26,7 @@ def home(request):
     else:
         if request.user.is_authenticated:
             return redirect("/campaign")
-        return render(request, "home/page1.html")
+        return render(request, "home/index_new.html")
 
 
 @login_required(login_url='/')
@@ -109,6 +109,9 @@ def confirm(request):
         return HttpResponse("Query Executed")
     else:
         return render(request, "home/page5.html")
+
+def test(request):
+    return render(request, "home/product_new.html")
 
 
 
