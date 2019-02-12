@@ -42,8 +42,7 @@ def campaign(request):
             return HttpResponse(campaign.errors)
             # return redirect("/campaign")
     else:
-        print("[DEB] : " + str("Campaign Get Hit......."))
-        return render(request, "home/page2.html")
+        return render(request, "home/product_new.html")
 
 @login_required(login_url='/')
 def criteria(request):

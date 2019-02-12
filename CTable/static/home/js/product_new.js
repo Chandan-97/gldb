@@ -17,9 +17,9 @@ for(var i=0;i<selectPlanButton.length;i++){
         // modal.style.display = "block";
         // backdrop.style.display = "block";
 
-        modal.classList.add('open');
-        backdrop.classList.add('open');
-        checkboxes.style.display = "none";
+        // modal.classList.add('open');
+        // backdrop.classList.add('open');
+        // checkboxes.style.display = "none";
     });
 };
 
@@ -42,11 +42,39 @@ function closeModal() {
     }
 };
 
-var state_list = ["Bihar", "Delhi", "Rajasthan", "Kerala", "Goa", "Gujrat"];
+// var state_list = ["Bihar", "Delhi", "Rajasthan", "Kerala", "Goa", "Gujrat"];
 
-function chooseState(){
-    $('.ui.longer.modal').modal('show');
-}
+// function chooseState(){
+//     $('.ui.longer.modal').modal('show');
+// }
+
+// Actual Programming Starts Here
+//
+// $("#campaignInfoSubmit").on("click", function (event) {
+//     event.preventDefault();
+//     $campaign_name = $("#campaign_name").val();
+//     $requestor_name = $("#requestor_name").val();
+//     $request_date = $("#request_date").val();
+//     $campaign_start_date = $("#campaign_start_date").val();
+//     $campaign_end_date = $("#campaign_end_date").val();
+//     $email = $("#email").val();
+//
+//     var campObject = {
+//         "campaign_name" : $campaign_name,
+//         "requestor_name" : $requestor_name,
+//         "request_date" : $request_date,
+//         "campaign_start_date" : $campaign_start_date,
+//         "campaign_end_date" : $campaign_end_date,
+//         "email" : $email
+//     };
+//
+//     if(validateCampaign(campObject) == false){
+//         return;
+//     }
+//
+//     console.log(campObject);
+//
+// })
 
 
 

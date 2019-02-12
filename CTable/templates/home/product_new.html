@@ -13,7 +13,7 @@
 	                <a href="#" class="header"><img src="{% static 'home/LG/lg_logo_1_1.png'%}"></a>
 	                <div class="right menu">
 	                    <a class="ui item" href="#"><i class="user circle icon"></i>Account</a>
-	                    <a class="ui item" href="#"><i class="sign-out icon"></i>Log Out</a>
+	                    <a class="ui item" href="/logout/"><i class="sign-out icon"></i>Log Out</a>
 	                </div>
 	            </div>
 	        </div>
@@ -54,14 +54,14 @@
 					        <div class="row">
 					        	<div class="eight wide column">
 					        		<div class="field">
-							            <label for="campaign_start_date">Request Date</label>
+							            <label for="campaign_start_date">Campaign Start Date</label>
 							            <input type="date" name="campaign_start_date" id="campaign_start_date" placeholder="mm/dd/yyyy">
 							        </div>
 					        	</div>
 
 					        	<div class="eight wide column">
 					        		<div class="field">
-							            <label for="campaign_end_date">Request Date</label>
+							            <label for="campaign_end_date">Campaign End Date</label>
 							            <input type="date" name="campaign_end_date" id="campaign_end_date" placeholder="mm/dd/yyyy">
 							        </div>
 					        	</div>
@@ -72,7 +72,7 @@
 				            <label for="email">Email</label>
 				            <input type="email" name="email" id="email" placeholder="example@lge.com">
 				        </div>
-				        <button class="ui basic black large button">Submit</button>
+{#				        <button class="ui basic black large button" id="campaignInfoSubmit">Submit</button>#}
 				    </form>
 				</div>
 
@@ -86,7 +86,7 @@
 			            <div class="inline fields">
 			            	<div class="field">
 									<div class="ui checkbox">
-										<input type="checkbox" name="select_product">
+										<input type="checkbox" name="select_product" id="select_product">
 										<label style="font-size: 1.5rem;">Select Products</label>
 									</div>
 								</div>
@@ -94,43 +94,43 @@
 							<div class="inline fields">
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="product" checked="checked">
+			                     <input type="checkbox" name="product" checked value="ALL">
 			                     <label>ALL</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="TV">
 			                     <label>TV</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="REF">
 			                     <label>REF</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="AC">
 			                     <label>AC</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="WM">
 			                     <label>WM</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="AV">
 			                     <label>AV</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox checkbox">
-			                     <input type="checkbox" name="product">
+			                     <input type="checkbox" name="product" value="MWO">
 			                     <label>MWO</label>
 			                  </div>
 			               </div>
@@ -142,7 +142,7 @@
 								<div class="inline fields">
 									<div class="field">
 										<div class="ui checkbox">
-											<input type="checkbox" name="purchase_date">
+											<input type="checkbox" name="purchase_date" id="purchase_date">
 											<label style="font-size: 1.5rem;">Purchase Date</label>
 										</div>
 									</div>
@@ -151,26 +151,12 @@
 									<div class="ui checkbox">
 										<input type="checkbox" name="purchase_before" id="purchase_before">
 										<label>Before</label>
-										<input type="month" name="purchase_before_date">
-										<!-- <select class="ui selection dropdown" name="purchase_before_date">
-											<option value="all">ALL</option>
-											<option value="0">0 Year</option>
-											<option value="1">1 Year</option>
-											<option value="2">2 Year</option>
-											<option value="3">3 Year</option>
-										</select> -->
+										<input type="month" name="purchase_before_date" id="purchase_before_date">
 									</div>
 									<div class="ui checkbox" style="margin-left: 2rem;">
 										<input type="checkbox" name="purchase_after" id="purchase_after">
 										<label>After</label>
-										<input type="month" name="purchase_after_date">
-										<!-- <select class="ui selection dropdown" name="purchase_after_date">
-											<option value="all">ALL</option>
-											<option value="0">0 Year</option>
-											<option value="1">1 Year</option>
-											<option value="2">2 Year</option>
-											<option value="3">3 Year</option>
-										</select> -->
+										<input type="month" name="purchase_after_date" id="purchase_after_date">
 									</div>
 								</div>
 							</div>
@@ -181,7 +167,7 @@
 								<div class="inline fields">
 									<div class="field">
 										<div class="ui checkbox">
-											<input type="checkbox" name="warranty">
+											<input type="checkbox" name="warranty" id="warranty">
 											<label style="font-size: 1.5rem;">Warranty</label>
 										</div>
 									</div>
@@ -189,52 +175,33 @@
 			               <div class="inline fields">
 			                  <div class="field">
 			                     <div class="ui radio checkbox">
-			                        <input type="radio" name="warranty_status" checked="checked" value="both">
+			                        <input type="radio" name="warranty_status" checked="checked" value="BOTH" id="warranty_both">
 			                        <label>Both</label>
 			                     </div>
 			                  </div>
 			                  <div class="field">
 			                     <div class="ui radio checkbox">
-			                        <input type="radio" name="warranty_status" value="IW">
+			                        <input type="radio" name="warranty_status" value="IW" id="warranty_iw">
 			                        <label>IW</label>
 			                     </div>
 			                  </div>
 			                  <div class="field">
 			                     <div class="ui radio checkbox">
-			                        <input type="radio" name="warranty_status" value="OW">
+			                        <input type="radio" name="warranty_status" value="OW" id="warranty_ow">
 			                        <label>OW</label>
 			                     </div>
 			                  </div>
 			               </div>
-							</div>
-							<br>
-
-							<!-- Choose State -->
-							<!-- <div class="ui form">
-								<div class="inline fields">
-									<div class="fields">
-										<div class="ui checkbox">
-											<input type="checkbox" name="state">
-											<label style="font-size: 1.5rem;">State</label>
-										</div>
-									</div>
-								</div>
-								<div class="inline fields">
-									<button class="ui button" onclick="chooseState()">Choose</button>
-								</div>
-
-							</div> -->
-
-
-
-							<hr>
-							<br>
+                            </div>
+                            <br>
+                            <hr>
+                            <br>
 
 							<!-- Recency -->
 							<div class="inline fields">
 								<div class="field">
 									<div class="ui checkbox">
-										<input type="checkbox" name="recency">
+										<input type="checkbox" name="recency" id="recency">
 										<label style="font-size: 1.5rem;">Recency</label>
 									</div>
 								</div>
@@ -244,17 +211,8 @@
 								<div class="ui checkbox">
 									<input type="checkbox" name="recency_from" id="recency_from">
 									<label>From</label>
-									<select class="ui selection dropdown" name="recency_from_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="recency_from_val" id="recency_from_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -266,17 +224,8 @@
 								<div class="ui checkbox" style="margin-left: 2rem;">
 									<input type="checkbox" name="recency_to" id="recency_to">
 									<label>To</label>
-									<select class="ui selection dropdown" name="recency_to_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="recency_to_val" id="recency_to_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -291,7 +240,7 @@
 							<div class="inline fields">
 								<div class="field">
 									<div class="ui checkbox">
-										<input type="checkbox" name="frequency">
+										<input type="checkbox" name="frequency" id="frequency">
 										<label style="font-size: 1.5rem;">Frequency</label>
 									</div>
 								</div>
@@ -301,17 +250,8 @@
 								<div class="ui checkbox">
 									<input type="checkbox" name="frequency_from" id="frequency_from">
 									<label>From</label>
-									<select class="ui selection dropdown" name="frequency_from_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="frequency_from_val" id="frequency_from_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -323,17 +263,8 @@
 								<div class="ui checkbox" style="margin-left: 2rem;">
 									<input type="checkbox" name="frequency_to" id="frequency_to">
 									<label>To</label>
-									<select class="ui selection dropdown" name="frequency_to_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="frequency_to_val" id="frequency_to_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -349,7 +280,7 @@
 							<div class="inline fields">
 								<div class="field">
 									<div class="ui checkbox">
-										<input type="checkbox" name="monetary">
+										<input type="checkbox" name="monetary" id="monetary">
 										<label style="font-size: 1.5rem;">Monetary</label>
 									</div>
 								</div>
@@ -359,17 +290,8 @@
 								<div class="ui checkbox">
 									<input type="checkbox" name="monetary_from" id="monetary_from">
 									<label>From</label>
-									<select class="ui selection dropdown" name="monetary_from_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="monetary_from_val" id="monetary_from_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -381,17 +303,8 @@
 								<div class="ui checkbox" style="margin-left: 2rem;">
 									<input type="checkbox" name="monetary_to" id="monetary_to">
 									<label>To</label>
-									<select class="ui selection dropdown" name="monetary_to_val">
-										<!-- <input type="hidden" name="years">
-										<i class="dropdown icon"></i>
-										<div class="default text">Before</div>
-										<div class="menu">
-											<div class="item" data-value="1">1 <span>year</span></div>
-											<div class="item" data-value="2">2 <span>year</span></div>
-											<div class="item" data-value="3">3 <span>year</span></div>
-											<div class="item" data-value="4">4 <span>year</span></div>
-										</div> -->
-										<option value="all">ALL</option>
+									<select class="ui selection dropdown" name="monetary_to_val" id="monetary_to_val">
+										<option value="ALL">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -400,7 +313,7 @@
 									</select>
 								</div>
 							</div>
-							<br>
+                            <br>
 			      	</div>
 			      </div>
 			      <div class="ui main text segment">
@@ -409,31 +322,31 @@
 			            <div class="inline fields">
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="frequency" checked="checked">
+			                     <input type="checkbox" name="output" checked="checked" id="output_all" value="ALL">
 			                     <label>ALL</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="frequency">
+			                     <input type="checkbox" name="output" id="output_phone" value="phone_no">
 			                     <label>Phone no.</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="frequency">
+			                     <input type="checkbox" name="output" id="output_email" value="email">
 			                     <label>Email</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="frequency">
+			                     <input type="checkbox" name="output" id="output_address" value="address">
 			                     <label>Address</label>
 			                  </div>
 			               </div>
 			               <div class="field">
 			                  <div class="ui checkbox">
-			                     <input type="checkbox" name="frequency">
+			                     <input type="checkbox" name="output" id="output_state" value="state">
 			                     <label>State</label>
 			                  </div>
 			               </div>
@@ -461,8 +374,6 @@
 				        <button class="ui basic black large button">Confirm</button>
 				    </form>
 				</div>
-	            <!-- <a href="#" class="modal__action">Yes!</a> -->
-	            <!-- <button class="modal__action modal__action--negative" type="button">No!</button> -->
 	        </div>
 	    </div>
 	</main>
@@ -475,6 +386,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'home/css/product_new.css' %}">
     <script type="text/javascript" src="{% static 'home/js/product_new.js' %}"></script>
+    <script type="text/javascript" src="{% static 'home/js/submit.js' %}"></script>
 </body>
 </html>
 
