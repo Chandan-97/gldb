@@ -100,7 +100,7 @@ function getRFWInfo(RFWId){
 
 function getOutputFields(){
     $OutputFields = $("input[name=output]");
-    console.log($OutputFields);
+    // console.log($OutputFields);
     $all = false;
     var output_list = [];
     for(var i=0; i<$OutputFields.length; i++){
@@ -124,7 +124,10 @@ function getOutputFields(){
     return $output_list;
 }
 
-function validateCampaignInfo(Campaign){
+//Validation Fields Start
+
+function getValidateCampaignInfo(Campaign){
+    return true;
     for(var i=0; i<Campaign.campaign_arr.length; i++){
         $campField = Campaign.campaign_arr[i];
         if($campField.length <= 1)
@@ -134,62 +137,123 @@ function validateCampaignInfo(Campaign){
     return true;
 }
 
+function getValidateProductInfo(ProductInfo){
+    return true;
+}
+
+function getValidatePurchaseDateInfo(PurchaseDateInfo){
+    return true;
+}
+
+function getValidateWarrantyInfo(WarrantyInfo){
+    return true;
+}
+
+function getValidateRecencyInfo(RecencyInfo){
+    return true;
+}
+
+function getValidateFrequencyInfo(FrequencyInfo){
+    return true;
+}
+
+function getValidateMonetaryInfo(MonetaryInfo){
+    return true;
+}
+
+function getValidateOutputFields(OutputFields){
+    return true;
+}
+// Validation Fields Ends
+
+
 $("#generate").on("click", function (event) {
     event.preventDefault();
 
     $CampaignInfo = getCampaignInfo();
-    console.log($CampaignInfo);
-
-    if(validateCampaignInfo($CampaignInfo) == false){
-        // doit
-        // return;
-    }
+    // console.log($CampaignInfo);
 
     $ProductInfo = getProductInfo();
-    console.log($ProductInfo);
+    // console.log($ProductInfo);
 
     $PurchaseDateInfo = getPurchaseDateInfo();
-    console.log($PurchaseDateInfo);
+    // console.log($PurchaseDateInfo);
 
     $WarrantyInfo = getWarrantyInfo();
-    console.log($WarrantyInfo);
+    // console.log($WarrantyInfo);
 
     $recency_id = {
-        "name" : "#recency",
-        "from" : "#recency_from",
-        "to" : "#recency_to",
-        "from_val" : "#recency_from_val",
-        "to_val" : "#recency_to_val"
+        "name"      : "#recency",
+        "from"      : "#recency_from",
+        "to"        : "#recency_to",
+        "from_val"  : "#recency_from_val",
+        "to_val"    : "#recency_to_val"
     };
     $RecencyInfo = getRFWInfo($recency_id);
-    console.log($RecencyInfo);
+    // console.log($RecencyInfo);
 
     $frequency_id = {
-        "name" : "#frequency",
-        "from" : "#frequency_from",
-        "to" : "#frequency_to",
-        "from_val" : "#frequency_from_val",
-        "to_val" : "#frequency_to_val"
+        "name"      : "#frequency",
+        "from"      : "#frequency_from",
+        "to"        : "#frequency_to",
+        "from_val"  : "#frequency_from_val",
+        "to_val"    : "#frequency_to_val"
     };
     $FrequencyInfo = getRFWInfo($frequency_id);
-    console.log($FrequencyInfo);
+    // console.log($FrequencyInfo);
 
     $monetary_id = {
-        "name" : "#monetary",
-        "from" : "#monetary_from",
-        "to" : "#monetary_to",
-        "from_val" : "#monetary_from_val",
-        "to_val" : "#monetary_to_val"
+        "name"      : "#monetary",
+        "from"      : "#monetary_from",
+        "to"        : "#monetary_to",
+        "from_val"  : "#monetary_from_val",
+        "to_val"    : "#monetary_to_val"
     };
     $MonetaryInfo = getRFWInfo($monetary_id);
-    console.log($MonetaryInfo);
+    // console.log($MonetaryInfo);
 
     $OutputFields = getOutputFields();
-    console.log($OutputFields);
-    
+    // console.log($OutputFields);
 
+    $validateCampaignInfo = getValidateCampaignInfo($CampaignInfo);
+    $validateProductInfo = getValidateProductInfo($ProductInfo);
+    $validatePurchaseDateInfo = getValidatePurchaseDateInfo($PurchaseDateInfo);
+    $validateWarrantyInfo = getValidateWarrantyInfo($WarrantyInfo);
+    $validateRecencyInfo = getValidateRecencyInfo($RecencyInfo);
+    $validateFrequencyInfo = getValidateFrequencyInfo($FrequencyInfo);
+    $validateMonetaryInfo = getValidateMonetaryInfo($MonetaryInfo);
+    $validateOutputFields = getValidateOutputFields($OutputFields);
 
+    if($validateCampaignInfo==false || $validateProductInfo==false)
+        return;
+    if($validatePurchaseDateInfo==false || $validateWarrantyInfo==false)
+        return;
+    if($validateRecencyInfo==false || $validateFrequencyInfo==false)
+        return;
+    if($validateMonetaryInfo==false || $validateOutputFields==false)
+        return;
+    console.log("Preparing request");
 
-    $(".modal").addClass("open");
-    $(".backdrop").addClass("open");
+    $.ajax({
+        type: "POST",
+        url:  "/test/",
+        data:{
+            csrfmiddlewaretoken : $("input[name=csrfmiddlewaretoken]").val(),
+            CampaignInfo        : {$CampaignInfo},
+            ProductInfo         : {$ProductInfo},
+            PurchaseDateInfo    : {$PurchaseDateInfo},
+            WarrantyInfo        : {$WarrantyInfo},
+            RecencyInfo         : {$RecencyInfo},
+            FrequencyInfo       : {$FrequencyInfo},
+            MonetaryInfo        : {$MonetaryInfo},
+            OutputFields        : {$OutputFields}
+        },
+
+        success: function(data){
+            $(".modal").addClass("open");
+            $(".backdrop").addClass("open");
+            console.log("Request Sent");
+            console.log(data);
+        }
+    });
 })

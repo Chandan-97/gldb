@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse, redirect
+import json
 
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
@@ -109,8 +110,25 @@ def confirm(request):
     else:
         return render(request, "home/page5.html")
 
+# @login_required(login_url='/')
+# def generateQuery(request):
+#     if(request.is_ajax()):
+#         req = request.POST.dict()
+#         query = CreateQuery(req)
+#         return HttpResponse(json.loads({query: query}))
+
 def test(request):
-    return render(request, "home/product_new.html")
+    if(request.is_ajax()):
+        print(request)
+        resp = request.POST.dict()
+        print(resp)
+        return HttpResponse(json.dumps(resp))
+
+    print("Route Hit")
+    resp = {
+        "res" : "Route Hit"
+    }
+    return HttpResponse("Not an ajax Request")
 
 
 

@@ -35,7 +35,8 @@
 				    	</div>
 			    	</div>
 			    	<br>
-				    <form class="ui form" action="" method="">
+				    <div class="ui form">
+                        {% csrf_token %}
 				        <div class="field">
 				            <label for="campaign_name">Campaign Name</label>
 				            <input type="text" name="campaign_name" id="campaign_name" placeholder="Campaign Name">
@@ -73,7 +74,7 @@
 				            <input type="email" name="email" id="email" placeholder="example@lge.com">
 				        </div>
 {#				        <button class="ui basic black large button" id="campaignInfoSubmit">Submit</button>#}
-				    </form>
+				    </div>
 				</div>
 
 		    </div>
