@@ -4,20 +4,21 @@ from django.db import models
 
 from django.conf import settings
 
+from django.core.files.storage import FileSystemStorage
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 class Campaign(models.Model):
-    # Request_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS)
-    request_date = models.DateField()
     campaign_name = models.CharField(max_length=100, default="Campaign Name")
     requester_name = models.CharField(max_length=100, default="Requester Name")
-    campaign_email = models.CharField(max_length=100, default="Email@lge.com")
-    # Campaign_end_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS)
-    campaign_end_date = models.DateField()
-    # Campaign_start_date = models.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    request_date = models.DateField()
     campaign_start_date = models.DateField()
+    campaign_end_date = models.DateField()
+    campaign_email = models.CharField(max_length=100, default="Email@lge.com")
 
     def __str__(self):
-        return "Campaign : " + self.Campaign_name
+        return "Campaign : " + self.campaign_name
 
     class Meta:
         verbose_name_plural = "Campaign"
@@ -30,4 +31,9 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = "Product"
+
+class TextFile(models.Model):
+    result = models.FileField(null=True, blank=True)
+    query = models.CharField(max_length=1000)
+    file_name = models.CharField(max_length=200, default="NA")
 

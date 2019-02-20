@@ -26,7 +26,7 @@
 		    <div class="six wide column">
 		     	<div class="ui main text container segment" style="width: 100%;" >
 				    <h1>Campaign Info</h1>
-				    <div class="ui form">
+				    <div class="ui form" style="display: none;">
 					    <div class="field">
 				    		<div class="ui icon input">
 							  <input type="text" placeholder="Search..." id="search_campaign">
@@ -199,6 +199,7 @@
                             <br>
 
 							<!-- Recency -->
+                            <div class="ui main text segment">
 							<div class="inline fields">
 								<div class="field">
 									<div class="ui checkbox">
@@ -213,7 +214,7 @@
 									<input type="checkbox" name="recency_from" id="recency_from">
 									<label>From</label>
 									<select class="ui selection dropdown" name="recency_from_val" id="recency_from_val">
-										<option value="ALL">ALL</option>
+										<option value="1">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -226,7 +227,7 @@
 									<input type="checkbox" name="recency_to" id="recency_to">
 									<label>To</label>
 									<select class="ui selection dropdown" name="recency_to_val" id="recency_to_val">
-										<option value="ALL">ALL</option>
+										<option value="5">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -235,15 +236,31 @@
 									</select>
 								</div>
 							</div>
-							<br>
+							<br><hr><br>
 
 							<!-- Frequency -->
 							<div class="inline fields">
 								<div class="field">
 									<div class="ui checkbox">
 										<input type="checkbox" name="frequency" id="frequency">
-										<label style="font-size: 1.5rem;">Frequency</label>
-									</div>
+										<label style="font-size: 1.5rem;display: inline;">Frequency</label>
+                                        <div class="ui form" style="display: inline; margin-left: 100px;">
+                                           <div class="inline fields" style="display: inline;">
+                                              <div class="field" style="display: inline;">
+                                                 <div class="ui radio checkbox">
+                                                    <input type="radio" name="f_and_or" checked="checked" value="AND" id="f_and">
+                                                    <label>AND</label>
+                                                 </div>
+                                              </div>
+                                              <div class="field" style="display: inline;">
+                                                 <div class="ui radio checkbox">
+                                                    <input type="radio" name="f_and_or" value="OR" id="f_or">
+                                                    <label>OR</label>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
+                                    </div>
 								</div>
 							</div>
 							<!-- Frequency From -->
@@ -252,7 +269,7 @@
 									<input type="checkbox" name="frequency_from" id="frequency_from">
 									<label>From</label>
 									<select class="ui selection dropdown" name="frequency_from_val" id="frequency_from_val">
-										<option value="ALL">ALL</option>
+										<option value="1">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -265,7 +282,7 @@
 									<input type="checkbox" name="frequency_to" id="frequency_to">
 									<label>To</label>
 									<select class="ui selection dropdown" name="frequency_to_val" id="frequency_to_val">
-										<option value="ALL">ALL</option>
+										<option value="5">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -274,7 +291,7 @@
 									</select>
 								</div>
 							</div>
-							<br>
+							<br><hr><br>
 
 
 							<!-- Monetary -->
@@ -282,7 +299,23 @@
 								<div class="field">
 									<div class="ui checkbox">
 										<input type="checkbox" name="monetary" id="monetary">
-										<label style="font-size: 1.5rem;">Monetary</label>
+										<label style="font-size: 1.5rem;display: inline;">Monetary</label>
+                                        <div class="ui form" style="display: inline; margin-left: 100px;">
+                                           <div class="inline fields" style="display: inline;">
+                                              <div class="field" style="display: inline;">
+                                                 <div class="ui radio checkbox">
+                                                    <input type="radio" name="m_and_or" checked="checked" value="AND" id="m_and">
+                                                    <label>AND</label>
+                                                 </div>
+                                              </div>
+                                              <div class="field" style="display: inline;">
+                                                 <div class="ui radio checkbox">
+                                                    <input type="radio" name="m_and_or" value="OR" id="m_or">
+                                                    <label>OR</label>
+                                                 </div>
+                                              </div>
+                                           </div>
+                                        </div>
 									</div>
 								</div>
 							</div>
@@ -292,7 +325,7 @@
 									<input type="checkbox" name="monetary_from" id="monetary_from">
 									<label>From</label>
 									<select class="ui selection dropdown" name="monetary_from_val" id="monetary_from_val">
-										<option value="ALL">ALL</option>
+										<option value="1">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -305,7 +338,7 @@
 									<input type="checkbox" name="monetary_to" id="monetary_to">
 									<label>To</label>
 									<select class="ui selection dropdown" name="monetary_to_val" id="monetary_to_val">
-										<option value="ALL">ALL</option>
+										<option value="5">ALL</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
 										<option value="3">3</option>
@@ -315,6 +348,7 @@
 								</div>
 							</div>
                             <br>
+                            </div>
 			      	</div>
 			      </div>
 			      <div class="ui main text segment">
@@ -370,10 +404,13 @@
 				    <form class="ui form">
 				        <div class="field">
 				            <!-- <label for="body">Description</label> -->
-				            <textarea name="" id="body" cols="30" rows="18"></textarea>
+				            <textarea name="" id="body" cols="30" rows="18" style="word-spacing: 10px;">
+
+                            </textarea>
 				        </div>
-				        <button class="ui basic black large button">Confirm</button>
+				        <button class="ui basic black large button" id="confirm">Confirm</button>
 				    </form>
+                    <a href="" id="dlink" download></a>
 				</div>
 	        </div>
 	    </div>

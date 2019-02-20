@@ -1,3 +1,5 @@
+# Code of no use
+
 def getSql(v):
     service = "rw_service_mst"
     where = " "

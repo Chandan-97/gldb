@@ -153,3 +153,6 @@ LOGIN_REDIRECT_URL = '/your-path'
 
 # Date formatverse url fin
 DATE_INPUT_FORMATS = ['%d-%m-%Y']
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")

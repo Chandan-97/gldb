@@ -26,17 +26,8 @@ nav div.ui.fixed.secondary.menu{
 	height: 40px;
 }
 .header.item.logo img{
-	/*height: 100%;*/
 	width: 100%;
 }
-
-/*#generate {
-	display: block;
-	position: relative;
-	top: 10px;
-	left: 80%;
-
-}*/
 
 .backdrop {
     position: fixed;
@@ -55,9 +46,6 @@ nav div.ui.fixed.secondary.menu{
     transform: translateY(0) !important;
 }
 
-
-
-
 .modal {
     position: fixed;
      display: none; 
@@ -72,11 +60,6 @@ nav div.ui.fixed.secondary.menu{
     border: 1px solid #ccc;
     box-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
-
-/*.modal__title {
-    text-align: center;
-    margin: 0 0 1rem 0;
-}*/
 
 #close {
 	color: #000;
@@ -120,10 +103,6 @@ nav div.ui.fixed.secondary.menu{
     background: #ff5454;
     border-color: #ff5454;
 }
-
-
-
-
 
 /*Added CSS*/
 body{

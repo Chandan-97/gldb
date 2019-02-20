@@ -124,14 +124,25 @@ function getOutputFields(){
     return $output_list;
 }
 
+function getFAndOr(){
+    $f_and_or = $("[name=f_and_or]:checked").val();
+    return {"F_AND_OR" : $f_and_or};
+}
+
+function getMAndOr() {
+    $m_and_or = $("[name=m_and_or]:checked").val();
+    return {"M_AND_OR" : $m_and_or};
+}
+
 //Validation Fields Start
 
 function getValidateCampaignInfo(Campaign){
-    return true;
-    for(var i=0; i<Campaign.campaign_arr.length; i++){
+    for(var i=0; i<Campaign.campaign_arr.length; i++) {
         $campField = Campaign.campaign_arr[i];
-        if($campField.length <= 1)
+        if ($campField.length <= 1) {
+            alert("Please Complete the CampaignInfo form")
             return false;
+        }
     }
 
     return true;
@@ -215,6 +226,9 @@ $("#generate").on("click", function (event) {
     $OutputFields = getOutputFields();
     // console.log($OutputFields);
 
+    $FAndOr = getFAndOr();
+    $MAndOr = getMAndOr();
+
     $validateCampaignInfo = getValidateCampaignInfo($CampaignInfo);
     $validateProductInfo = getValidateProductInfo($ProductInfo);
     $validatePurchaseDateInfo = getValidatePurchaseDateInfo($PurchaseDateInfo);
@@ -232,28 +246,65 @@ $("#generate").on("click", function (event) {
         return;
     if($validateMonetaryInfo==false || $validateOutputFields==false)
         return;
-    console.log("Preparing request");
+
+    console.log($CampaignInfo);
+    console.log($ProductInfo);
+    console.log($PurchaseDateInfo);
+    console.log($WarrantyInfo);
+    console.log($RecencyInfo);
+    console.log($FrequencyInfo);
+    console.log($MonetaryInfo);
+    console.log($OutputFields);
+    console.log($FAndOr);
+    console.log($MAndOr);
+
+    console.log($ProductInfo["product_list"]);
 
     $.ajax({
         type: "POST",
-        url:  "/test/",
+        url:  "/campaign/",
         data:{
             csrfmiddlewaretoken : $("input[name=csrfmiddlewaretoken]").val(),
-            CampaignInfo        : {$CampaignInfo},
-            ProductInfo         : {$ProductInfo},
-            PurchaseDateInfo    : {$PurchaseDateInfo},
-            WarrantyInfo        : {$WarrantyInfo},
-            RecencyInfo         : {$RecencyInfo},
-            FrequencyInfo       : {$FrequencyInfo},
-            MonetaryInfo        : {$MonetaryInfo},
-            OutputFields        : {$OutputFields}
+            CampaignInfo        : $CampaignInfo,
+            ProductInfo         : $ProductInfo,
+            PurchaseDateInfo    : $PurchaseDateInfo,
+            WarrantyInfo        : $WarrantyInfo,
+            RecencyInfo         : $RecencyInfo,
+            FrequencyInfo       : $FrequencyInfo,
+            MonetaryInfo        : $MonetaryInfo,
+            OutputFields        : $OutputFields,
+            FAndOr              : $FAndOr,
+            MAndOr              : $MAndOr
         },
-
         success: function(data){
             $(".modal").addClass("open");
             $(".backdrop").addClass("open");
-            console.log("Request Sent");
             console.log(data);
-        }
+            $("#body").val(data);
+        },
     });
-})
+});
+
+
+$("#confirm").on("click", function (event) {
+    event.preventDefault();
+
+    $query = $("#body").val();
+    console.log($query);
+
+    $.ajax({
+        type: "POST",
+        url: "/confirm/",
+        data:{
+            csrfmiddlewaretoken : $("input[name=csrfmiddlewaretoken]").val(),
+            query               : $query,
+        },
+
+        success: function (data) {
+            console.log(data);
+
+            $("#dlink").attr("href", data);
+            $("#dlink").text("Download");
+        }
+    })
+});

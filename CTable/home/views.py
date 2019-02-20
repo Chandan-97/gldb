@@ -3,13 +3,14 @@ import json
 
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-from .forms import CampaignForm
+
+from .CreateQuery import CreateQuery
+from .GetQuery import getQuery
+from .RunQuery import runQuery
+from .FilterCampData import filterCampData
+
 from .models import Campaign
 
-from .sqlGenerator import getSql, getSelect
-
-# custom sql queries
-from django.db import connection
 
 # Create your views here.
 
@@ -29,106 +30,55 @@ def home(request):
             return redirect("/campaign")
         return render(request, "home/index_new.html")
 
-
 @login_required(login_url='/')
 def campaign(request):
-    if request.method == "POST":
-        campaign = CampaignForm(request.POST)
+    if request.is_ajax():
+        print(request.POST)
+        print("===============")
+        query = CreateQuery(request.POST)
+        CampInfo = filterCampData(request.POST)
+        data = {}
 
-        if campaign.is_valid():
-            campaign.save()
-            return redirect("/criteria")
+        try:
+            obj = Campaign(campaign_name=CampInfo[0], requester_name=CampInfo[1], request_date=CampInfo[2], campaign_start_date=CampInfo[3], campaign_end_date=CampInfo[4], campaign_email=CampInfo[5])
+        except Exception as e:
+            data["success"] = False
+            data["error"] = str(e)
+            return HttpResponse(data)
+
+        err = "Campdata not valid"
+        if(CampInfo[-1] == False):
+            data["success"] = False
         else:
-            print(campaign.errors)
-            return HttpResponse(campaign.errors)
-            # return redirect("/campaign")
-    else:
-        return render(request, "home/product_new.html")
+            data["success"] = False
 
-@login_required(login_url='/')
-def criteria(request):
-    if request.method == "POST":
-        print(request.POST.dict())
-        sql = getSql(request.POST.dict())
-        request.session["where"] = sql
-        return render(request, "home/page4.html")
-        # return HttpResponse("Criteria Post route hit......")
-    else:
-        return render(request, "home/page3.html")
+        data["query"] = query
+
+        print("Query : %s"%(query))
+        return HttpResponse(query)
+    return render(request, "home/product_new.html")
+
+@login_required(login_url="/")
+def confirm(request):
+    if request.is_ajax():
+        query = getQuery(request.POST)
+        print(query)
+        print("----------------------")
+        res = runQuery(request, query, "test")
+
+        if res[0] == False:
+            return HttpResponse("Error with Query : "+str(query))
+
+        return HttpResponse(res[2])
+    return render(request, "home/product_new.html")
 
 @login_required(login_url='/')
 def Logout(request):
     logout(request)
-    print("[DEB] : " + str("Logout Success"))
     return redirect("/")
 
-@login_required(login_url='/')
-def selection(request):
-    if request.method == "POST":
-        form_data = request.POST.dict()
-        print(form_data)
-        select = getSelect(form_data)
-        print(select)
-
-        sql = select + " [Table Joins] "
-        try:
-            sql += request.session["where"]
-            print("Where Query Found into Session.....")
-        except Exception as e:
-            print("Where query not found")
-            sql += "(WHERE not FOUND), "
-
-        return render(request, "home/page5.html", {"sql": sql})
-    else:
-        return render(request, "home/page4.html")
-
-@login_required(login_url='/')
-def confirm(request):
-    if request.method == "POST":
-        query = request.POST.dict()
-        try:
-            query = query["query"]
-        except Exception as e:
-            print("[confirm] : " + str(query))
-            query = "SELECT * FROM rw_service_mst"
-
-        print("[confirm] : " + str(query))
-
-        # for testing only
-        # Start
-        query = "SELECt * FROM rw_service_mst"
-        # End
-
-        print("===========================================")
-        print("===========================================")
-
-        with connection.cursor() as cursor:
-            cursor.execute(query)
-            result = cursor.fetchall()
-            print(result)
-        return HttpResponse("Query Executed")
-    else:
-        return render(request, "home/page5.html")
-
-# @login_required(login_url='/')
-# def generateQuery(request):
-#     if(request.is_ajax()):
-#         req = request.POST.dict()
-#         query = CreateQuery(req)
-#         return HttpResponse(json.loads({query: query}))
-
 def test(request):
-    if(request.is_ajax()):
-        print(request)
-        resp = request.POST.dict()
-        print(resp)
-        return HttpResponse(json.dumps(resp))
-
-    print("Route Hit")
-    resp = {
-        "res" : "Route Hit"
-    }
-    return HttpResponse("Not an ajax Request")
+    return HttpResponse("Test Route Hit")
 
 
 
