@@ -1,4 +1,4 @@
-cn_customer = "cn_customer_mst."
+cn_customer = "cn_customer_mst_1."
 FROM = "FROM  ch_test_crm.rw_service_mst rw_service_mst " \
        "LEFT JOIN ch_test_crm.cn_customer_mst_1 cn_customer_mst_1 " \
        "ON rw_service_mst.customer_no=cn_customer_mst_1.customer_no " \
