@@ -1,11 +1,13 @@
 cn_customer = "cn_customer_mst."
-FROM = "FROM  rw_service_mst LEFT JOIN cn_customer_mst_1 ON " \
-       "rw_service_mst.customer_no=cn_customer_mst_1.customer_no LEFT JOIN gsfs_model ON " \
-       "rw_service_mst.model_code=gsfs_model.model_code "
+FROM = "FROM  ch_test_crm.rw_service_mst rw_service_mst " \
+       "LEFT JOIN ch_test_crm.cn_customer_mst_1 cn_customer_mst_1 " \
+       "ON rw_service_mst.customer_no=cn_customer_mst_1.customer_no " \
+       "LEFT JOIN ch_test_crm.gsfs_model gsfs_model " \
+       "ON rw_service_mst.model_code=gsfs_model.model_code"
 gsfs_model_code = "gsfs_model.model_code="
 rw_service = "rw_service_mst."
-WHERE = "WHERE length(trim(rw_service_mst.serial_no))=13 " \
-        "AND SUBSTR(rw_service_mst.serial_no, 1, 3) regexp '^\\d{3}' " \
+WHERE = " WHERE length(trim(rw_service_mst.serial_no))=13 " \
+        "AND SUBSTR(rw_service_mst.serial_no, 1, 3) regexp '^\d{3}' " \
         "AND rw_service_mst.service_type_code in ('IS','MS')"
 
 # table name for recency, frequecy and monetary value
@@ -54,7 +56,6 @@ def CreateQuery(req):
     # print("Warranty")
     # print(Warranty)
     # print("===============")
-
 
     # Recency Data
     Recency = []
