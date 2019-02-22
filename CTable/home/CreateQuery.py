@@ -149,12 +149,12 @@ def CreateQuery(req):
     if Purchase[0]:
         where = "("
         if Purchase[1] and Purchase[3]:
-            where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, %X%m) AS INT) BETWEEN str_to_date('"+Purchase[2]+"', '%Y-%m') AND "
-            where += "'"+Purchase[4]+"'"
+            where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, '%X%m') AS INT) BETWEEN CAST('"+Purchase[2]+"' AS INT) AND "
+            where += "CAST('"+Purchase[4]+"') AS INT)"
         elif Purchase[1]:
-            where += rw_service+"purchase_date <= str_to_date('"+Purchase[2]+"', '%Y-%m'"
+            where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, '%X%m') AS INT) <= CAST('"+Purchase[2]+"' AS INT)"
         elif Purchase[3]:
-            where += rw_service+"purchase_date >= str_to_date'"+Purchase[4]+"', '%Y-%m'"
+            where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, '%X%m') AS INT) >= CAST('"+Purchase[4]+"' AS INT)"
 
         if(Purchase[1] or Purchase[3]):
             where += ")"
