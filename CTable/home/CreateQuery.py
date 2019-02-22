@@ -150,7 +150,7 @@ def CreateQuery(req):
         where = "("
         if Purchase[1] and Purchase[3]:
             where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, '%X%m') AS INT) BETWEEN CAST('"+Purchase[2]+"' AS INT) AND "
-            where += "CAST('"+Purchase[4]+"') AS INT)"
+            where += "CAST('"+Purchase[4]+"' AS INT)"
         elif Purchase[1]:
             where += "CAST(DATE_FORMAT("+rw_service+"purchase_date, '%X%m') AS INT) <= CAST('"+Purchase[2]+"' AS INT)"
         elif Purchase[3]:
